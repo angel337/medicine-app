@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "582511781421",
+    "project_id": "medimind123-77ea3",
+    "storage_bucket": "medimind123-77ea3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582511781421:android:ce9f114e57bf3847797aa4",
+        "android_client_info": {
+          "package_name": "com.example.flutter_medimind_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582511781421-e754dbh4ah351id27444qnt7s0amhg03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdWfHCAGn-JnWDnYqvVzN9rQNmWUFk4ZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582511781421-e754dbh4ah351id27444qnt7s0amhg03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
