@@ -21,7 +21,7 @@ class CaretakerNotInvited extends StatelessWidget {
             ),
             Container(
               child: Text(
-                'No one has invited you as a Caretaker.',
+                'You as a Caretaker are not assigned any patients.',
                 style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -34,14 +34,14 @@ class CaretakerNotInvited extends StatelessWidget {
             Container(
               height: getProportionateScreenHeight(170),
               width: getProportionateScreenWidth(170),
-              child: Image.asset('assets/images/r.png'),
+              child: Image.asset('assets/images/fail.jpg'),
             ),
             SizedBox(
               height: getProportionateScreenHeight(60),
             ),
             Container(
               child: Text(
-                'If you are the care taker of someone, please go to their accounts, then their profile, and after that add your account as a Caretaker there.',
+                'If you are the care taker of someone, -> Go to patient account -> Profile -> Register your Phone number to become a Caretaker.',
                 style: Theme.of(context).textTheme.bodyText1,
                 textAlign: TextAlign.center,
               ),
@@ -62,7 +62,7 @@ class CaretakerNotInvited extends StatelessWidget {
                     getProportionateScreenHeight(40),
                   ),
                 ),
-                child: Text('log out'),
+                child: Text('Log Out'),
                 onPressed: () {
                   Provider.of<AuthService>(context, listen: false).signOut();
                 },

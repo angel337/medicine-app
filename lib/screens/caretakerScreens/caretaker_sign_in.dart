@@ -40,14 +40,7 @@ class CaretakerSignInScreen extends StatelessWidget {
               SizedBox(
                 height: _screenSize.height * 0.07,
               ),
-              Text(
-                'Enter your name:',
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.headline6!.copyWith(
-                      color: whiteColor,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
+
               Form(
                 child: Padding(
                   padding:

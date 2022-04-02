@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Darmanakanm',
+      title: 'MediMind',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           //from RGB
@@ -116,7 +116,7 @@ class AuthenticationWrapper extends StatelessWidget {
     String? thePatientUser = Provider.of<AnonymousAuthService>(context).uid;
     String? theCaretakerUser = Provider.of<AuthService>(context).uid;
 
-//TODO: check for the creataker user as well.
+//TODO: check for the caretaker user as well.
     if (thePatientUser != null) {
       return BottomNavHandler();
     } else if (theCaretakerUser != null) {

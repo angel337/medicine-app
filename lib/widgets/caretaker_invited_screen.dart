@@ -43,7 +43,7 @@ class _CaretakerInvitedState extends State<CaretakerInvited> {
           Container(
             width: getProportionateScreenWidth(700),
             child: Text(
-              "Now you are taking care of :",
+              "Patients assigned to you are  :",
               style: Theme.of(context).textTheme.headline6!.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -95,7 +95,7 @@ class _CaretakerInvitedState extends State<CaretakerInvited> {
           ),
           Container(
             height: getProportionateScreenHeight(120),
-            child: Image.asset('assets/images/t.png'),
+            child: Image.asset('assets/images/success.jpg'),
           ),
           SizedBox(
             height: getProportionateScreenHeight(30),
@@ -105,7 +105,7 @@ class _CaretakerInvitedState extends State<CaretakerInvited> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                'If the patient forgot any pills, you will be notified within an hour.',
+                'You will be notified in due time',
                 style: Theme.of(context).textTheme.bodyText1,
                 textAlign: TextAlign.center,
               ),
@@ -115,7 +115,7 @@ class _CaretakerInvitedState extends State<CaretakerInvited> {
             height: getProportionateScreenHeight(30),
           ),
           Text(
-            'Please select a patient to track:',
+            'Tracking Log:',
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
                   fontWeight: FontWeight.bold,
                 ),

@@ -45,7 +45,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 child: Container(
                   margin: EdgeInsets.only(top: _screenSize.height * 0.01),
                   child: Text(
-                      'please confirm your country code and enter your phone number',
+                      'Select appropriate country code',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.subtitle1),
                 ),

@@ -34,7 +34,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Enter Code',
+                    'Enter SMS Code',
                     style: Theme.of(context).textTheme.headline4!.copyWith(
                           color: blackColor,
                         ),
@@ -71,7 +71,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                     height: _screenSize.height * 0.05,
                   ),
                   Text(
-                    'If you did not receive the code, do not worry, a new code will be sent in 60 seconds. ',
+                    'NOTE: Default code is 123456 for app demo. This will be a future feature',
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   SizedBox(

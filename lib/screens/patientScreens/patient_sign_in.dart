@@ -38,25 +38,17 @@ class _PatientSignInScreenState extends State<PatientSignInScreen> {
             ),
             SizedBox(
               height: _screenSize.height * 0.05,
-            ),
-            Text(
+            ),Text(
               '''Add your name and begin to log medicines...''',
               style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    color: bitGreyish,
-                    fontSize: 16,
-                  ),
+                color: bitGreyish,
+                fontSize: 16,
+              ),
             ),
             SizedBox(
               height: _screenSize.height * 0.07,
             ),
-            Text(
-              'Enter your name:',
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: whiteColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
+
             Form(
               child: Padding(
                 padding:

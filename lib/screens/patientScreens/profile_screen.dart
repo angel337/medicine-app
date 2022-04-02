@@ -190,7 +190,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 child: TextField(
                                   controller: phoneController,
                                   decoration: InputDecoration(
-                                    label: Text("+XXX XXX-XXX-XXXX"),
+                                    label: Text("+XXX-XX-XXXXXXX"),
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           width: 0,
@@ -226,7 +226,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                                'adding the caretaker succeeded.'),
+                                                'Caretaker added successfully'),
                                           ),
                                         );
                                         phoneController.clear();
@@ -235,7 +235,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                                'adding the caretaker failed.'),
+                                                'Caretaker not added. Make sure to login and register as caretaker.'),
                                           ),
                                         );
                                       }

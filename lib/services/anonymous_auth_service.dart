@@ -37,13 +37,27 @@ class AnonymousAuthService extends ChangeNotifier {
 
   Future signInAnonymously() {
     get_DeviceToken();
-    return _firebaseAuth.signInAnonymously().then((theCredential) {
+    return _firebaseAuth.signInWithEmailAndPassword(email: patientName! + '@medimind.com',
+        password: patientName! + 'medimind')
+        .then((theCredential) {
       print('//////////////////////user logged in.');
       setTheUID(theCredential.user!.uid);
       setTheUser(theCredential.user!);
-      get_DeviceToken();
-      savePatientToFirestore();
+    })
+        .catchError((error) {
+      return _firebaseAuth.createUserWithEmailAndPassword(email: patientName! + '@medimind.com',
+          password: patientName! + 'medimind')
+          .then((theCredential) {
+        print('//////////////////////user logged in.');
+        setTheUID(theCredential.user!.uid);
+        setTheUser(theCredential.user!);
+        get_DeviceToken();
+        savePatientToFirestore();
+      });
     });
+
+
+
   }
 
   get_DeviceToken() {
