@@ -2,6 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_medimind_app/config.dart';
 import 'package:flutter_medimind_app/constants.dart';
 
+import 'package:table_calendar/table_calendar.dart';
+
+import '../../models/event.dart';
+
+// class UpcomingScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("My Pill Calendar"),
+//         centerTitle: true,
+//       ),
+//       body: TableCalendar(
+//         focusedDay: DateTime.now(),
+//         firstDay: DateTime(1990),
+//         lastDay: DateTime(2050))
+//     );
+//   }
+// }
+
 
 class UpcomingScreen extends StatefulWidget {
   const UpcomingScreen({Key? key}) : super(key: key);
@@ -11,63 +31,83 @@ class UpcomingScreen extends StatefulWidget {
 }
 
 class _UpcomingScreenState extends State<UpcomingScreen> {
+
+  Map<DateTime,List<Event>> selectedEvents = {};
+  CalendarFormat format = CalendarFormat.month;
+  DateTime selectedDay = DateTime.now();
+  DateTime focusedDay = DateTime.now();
+
+  List<Event> _getEventsfromDay(DateTime date) {
+    return selectedEvents[date] ?? [Event(title: 'test')];
+  }
+
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: whiteColor,
-      appBar: AppBar(),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 40,
+        appBar: AppBar(
+          title: Text("My Pill Calendar"),
+          centerTitle: true,
+        ),
+        body: Column(
+          children: [
+      TableCalendar(
+            focusedDay: focusedDay,
+            firstDay: DateTime(1990),
+            lastDay: DateTime(2050),
+            calendarFormat: format,
+          onFormatChanged: (CalendarFormat _format) {
+              setState(() {
+                format = _format;
+              });
+          },
+          startingDayOfWeek: StartingDayOfWeek.sunday,
+          daysOfWeekVisible: true,
+          // Code for day changes
+          onDaySelected: (DateTime selectDay,DateTime focusDay) {
+            setState(() {
+              selectedDay = selectDay;
+              focusedDay = focusDay;
+            });
+          },
+          selectedDayPredicate: (DateTime date){
+            return isSameDay(selectedDay, date);
+          },
+            //Styling components of calendar
+              calendarStyle: CalendarStyle(
+              isTodayHighlighted: true,
+              selectedDecoration: BoxDecoration(
+              color: Colors.cyan,
+              shape: BoxShape.circle,
               ),
-              Container(
-                width: getProportionateScreenWidth(400),
-                child: Text(
-                  'Pills To Take',
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                  textAlign: TextAlign.center,
+              selectedTextStyle: TextStyle(color: Colors.white),
+                  todayDecoration: BoxDecoration(
+                    color: Colors.orange,
+                shape: BoxShape.circle,
+                  ),
+              ),
+          headerStyle:  HeaderStyle(
+            formatButtonVisible: true,
+            titleCentered: true,
+            formatButtonShowsNext: false,
+            formatButtonDecoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+              formatButtonTextStyle: TextStyle(
+                color: Colors.white,
+              )
+          ),
+
+        ),
+            ..._getEventsfromDay(selectedDay).map(
+                  (Event event) => ListTile(
+                title: Text(
+                  event.title,
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: getProportionateScreenWidth(500),
-                height: getProportionateScreenHeight(500),
-                child: Image.asset('assets/images/cal5.jpg'),
-              ),
-              // SizedBox(
-              //   height: 10,
-              // ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 13,
-                    backgroundColor: teal,
-                  ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(20),
-                  ),
-                  Text(
-                    'Pill Days',
-                    style: Theme.of(context).textTheme.headline5!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+    ]));
   }
 }
