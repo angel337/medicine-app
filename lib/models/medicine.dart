@@ -20,6 +20,14 @@ class Medicine {
   DocumentReference? reference;
   Status currentStatus;
   String? imageUrl;
+  bool isSatSelected;
+  bool isSunSelected;
+  bool isFriSelected;
+  bool isMonSelected;
+  bool isTueSelected;
+  bool isWedSelected;
+  bool isThuSelected;
+
   Medicine({
     required this.id,
     required this.name,
@@ -33,6 +41,13 @@ class Medicine {
     this.reference,
     required this.currentStatus,
     this.imageUrl,
+    this.isSatSelected = false,
+    this.isSunSelected = false,
+    this.isFriSelected = false,
+    this.isMonSelected = false,
+    this.isTueSelected = false,
+    this.isWedSelected = false,
+    this.isThuSelected = false
   });
 
   Medicine copyWith({
@@ -48,6 +63,14 @@ class Medicine {
     DocumentReference? reference,
     Status? currentStatus,
     String? imageUrl,
+    bool? isSatSelected,
+    bool? isSunSelected,
+    bool? isFriSelected,
+    bool? isMonSelected,
+    bool? isTueSelected,
+    bool? isWedSelected,
+    bool? isThuSelected
+
   }) {
     return Medicine(
       id: id ?? this.id,
@@ -62,6 +85,13 @@ class Medicine {
       reference: reference ?? this.reference,
       currentStatus: currentStatus ?? this.currentStatus,
       imageUrl: imageUrl ?? this.imageUrl,
+      isSatSelected: isSatSelected ?? this.isSatSelected,
+      isSunSelected: isSunSelected ?? this.isSunSelected,
+      isFriSelected: isFriSelected ?? this.isFriSelected,
+      isMonSelected: isMonSelected ?? this.isMonSelected,
+      isTueSelected: isTueSelected ?? this.isTueSelected,
+      isWedSelected: isWedSelected ?? this.isWedSelected,
+      isThuSelected: isThuSelected ?? this.isThuSelected
     );
   }
 
@@ -80,6 +110,13 @@ class Medicine {
       'reference': reference,
       'currentStatus': currentStatus.toMap(),
       'imageUrl': imageUrl,
+      'isMonSelected': isMonSelected,
+      'isTueSelected': isTueSelected,
+      'isWedSelected': isWedSelected,
+      'isThuSelected': isThuSelected,
+      'isFriSelected': isFriSelected,
+      'isSatSelected': isSatSelected,
+      'isSunSelected': isSunSelected
     };
   }
 
@@ -103,6 +140,13 @@ class Medicine {
       reminderTimes: List<String>.from(map['reminderTimes']),
       currentStatus: Status.fromMap(map['currentStatus']),
       imageUrl: map['imageUrl'] ?? '',
+      isWedSelected: map['isWedSelected'] ?? false,
+      isThuSelected: map['isThuSelected'] ?? false,
+      isFriSelected: map['isFriSelected'] ?? false,
+      isSatSelected: map['isSatSelected'] ?? false,
+      isSunSelected: map['isSunSelected'] ?? false,
+      isMonSelected: map['isMonSelected'] ?? false,
+      isTueSelected: map['isTueSelected'] ?? false,
     );
   }
 

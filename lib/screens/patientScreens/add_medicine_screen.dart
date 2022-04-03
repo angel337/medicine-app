@@ -532,6 +532,14 @@ class _AddMedicineScreenState extends State<AddMedicineScreen> {
                                   (radioButtonValue == options.onSpecificDays)),
                           reminderTimes: allRemindersAsString,
                           currentStatus: Status(),
+                          isSatSelected: isSatSelected,
+                          isSunSelected : isSunSelected,
+                          isMonSelected :isMonSelected,
+                          isTueSelected :isTueSelected,
+                          isWedSelected :isWedSelected,
+                          isThuSelected :isThuSelected,
+                          isFriSelected :isFriSelected
+
                         );
                         Provider.of<FireStoreService>(context, listen: false)
                             .addMedicineToFirestore(userUID!, theMedicine);
