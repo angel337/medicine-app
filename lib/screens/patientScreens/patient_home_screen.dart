@@ -19,7 +19,7 @@ class PatientHomeScreen extends StatefulWidget {
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
   }
 

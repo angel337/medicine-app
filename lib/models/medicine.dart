@@ -98,7 +98,7 @@ class Medicine {
       startDate: map['startDate'],
       endDate: map['endDate'],
       frequency: FrequencyType.fromMap(map['frequency']),
-      // selectedDays:
+      // to choose selectedDays:
       //     List<Days>.from(map['selectedDays']?.map((x) => Days.fromMap(x))),
       reminderTimes: List<String>.from(map['reminderTimes']),
       currentStatus: Status.fromMap(map['currentStatus']),

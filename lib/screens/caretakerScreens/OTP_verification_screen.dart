@@ -104,7 +104,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                     style: ElevatedButton.styleFrom(
                         minimumSize: Size(
                             _screenSize.width * 0.7, _screenSize.height * 0.06),
-                        primary: orange // put the width and height you want
+                        primary: orange
                         ),
                   )
                 ],

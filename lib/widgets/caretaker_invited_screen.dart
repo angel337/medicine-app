@@ -27,7 +27,7 @@ class _CaretakerInvitedState extends State<CaretakerInvited> {
 
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
   }
 

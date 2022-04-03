@@ -31,7 +31,7 @@ class _TodaysMedicinesListViewState extends State<TodaysMedicinesListView> {
   Map<String, List<Medicine>>? mappedMedicines;
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
     // todaysMedicine = extractTodaysMedicine();
     // mappedMedicines = mapMedicinesToTime();
